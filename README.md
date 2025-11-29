@@ -37,6 +37,7 @@ In your **first terminal**, navigate to the project directory and start the **Se
 
 ```bash
 uvicorn server:server --port 5000
+```
 
 The format is uvicorn <file_name>:<fastapi_instance_name>.
 
