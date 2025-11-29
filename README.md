@@ -88,6 +88,7 @@ In your **first terminal**, navigate to the project directory and start the **Se
 
 ```bash
 uvicorn server:server --port 5000
+```
 The format is uvicorn <file_name>:<fastapi_instance_name>.
 
 This application handles the backend API requests.
@@ -98,6 +99,7 @@ In your second terminal, navigate to the project directory and start the Client 
 ```bash
 
 uvicorn client:app --port 8080
+```
 This application handles the frontend templates and makes requests to the backend server running on port 5000
 
 
@@ -106,4 +108,5 @@ Once both terminals show that the applications are running, you can access the f
 
 ```bash
 [http://127.0.0.1:8080](http://127.0.0.1:8080)
+```
 The Client will then automatically communicate with the Server running on port 5000 to fetch data.
