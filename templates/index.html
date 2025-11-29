@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShelfStream</title>
+</head>
+<style>
+    body{
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        flex-direction: column;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+</style>
+<body>
+    <h1>{{ message }}</h1>
+    <table>
+       <tr> 
+            <th> Product</th>
+            <th> Price</th>
+            <th> Units </th>
+        </tr>
+
+        {% for key, value in g_list.items()%}
+            <tr>
+                <td>{{ key }} </td>
+                <td>{{value.price}}</td>
+                <td>{{value.units}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <form method="post" action="/order">
+        <input type="text", name="product_name", placeholder="Enter Product name">
+        <input type="number", name="order_qty">
+        <button type="submit">Order</button>
+
+    </form>
+</body>
+</html>
